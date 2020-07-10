@@ -10,7 +10,37 @@
     </head>
 
     <body>
+
     <?php
+        -- phpMyAdmin SQL Dump
+        -- version 4.9.3
+        -- https://www.phpmyadmin.net/
+        --
+        -- Hôte : localhost:8889
+        -- Généré le :  ven. 10 juil. 2020 à 11:14
+        -- Version du serveur :  5.7.26
+        -- Version de PHP :  7.4.2
+        
+        SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+        SET time_zone = "+00:00";
+        
+        --
+        -- Base de données :  `base-site-routing`
+        --
+        
+        -- --------------------------------------------------------
+        
+        --
+        -- Structure de la table `utilisateurs`
+        --
+        
+        CREATE TABLE `utilisateurs` (
+          `id` text NOT NULL,
+          `login` int(11) NOT NULL,
+          `password` text NOT NULL,
+          `img-path` int(11) NOT NULL
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        
         
         if ($_SESSION = "j") {
             echo "<p> Mauvais couple identifiant / mot de passe.";
@@ -50,6 +80,9 @@
         else { 
             echo "Mauvais couple identifiant / mot de passe."
         }
+
+        $_SESSION = "login" ;
+        $_COOKIES = "img-path" ;
         
           
     ?>    
